@@ -1,0 +1,55 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 8em);
+    left: 0;
+    right: 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        color: white;
+        font-family: 'Castoro Titling', cursive;
+        height: 300px;
+        padding: 0 5em 0 5em;
+    }
+
+    &__content {
+        font-size: 1.5em;
+    }
+
+    &__author {
+        font-size: 1em;
+    }
+
+    &__buttons {
+        margin-top: 10em
+    }
+}
+
+.wrapper {
+    background-color: black;
+    height: 100vh;
+}
+
+.btn {
+    margin: 1em;
+    font-family: 'Castoro Titling', cursive;
+    border: none;
+    background-color: transparent;
+    transition: 0.5s;
+    color: rgb(255, 255, 255);
+
+    a {
+        color: white;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}

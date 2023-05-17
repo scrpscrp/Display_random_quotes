@@ -1,0 +1,65 @@
+.random-quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  font-family: "Castoro Titling", cursive;
+  height: 20em;
+  transition: 2ms;
+
+  &__content {
+    font-size: 2em;
+  }
+
+  &__author {
+    font-size: 1em;
+  }
+
+  &__buttons {
+    margin-top: 10em;
+  }
+
+  &__btn {
+    margin: 1em;
+    font-family: "Castoro Titling", cursive;
+    border: none;
+    background-color: transparent;
+    transition: 0.5s;
+
+    a {
+      color: black;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      color: rgb(86, 86, 86);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: calc(50% - 10em);
+  left: 0;
+  right: 0;
+  padding: 0 5em 0 5em;
+}
+
+.animate-quote {
+  animation: opac 0.8s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

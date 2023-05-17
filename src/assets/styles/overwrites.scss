@@ -1,0 +1,12 @@
+.p-rating .p-rating-icon.pi-star-fill,
+.p-rating:not(.p-disabled):not(.p-readonly) .p-rating-icon:hover {
+    color: rgb(123, 123, 123);
+
+    &:hover {
+        color: rgb(88, 88, 88);
+    }
+}
+
+p-carousel {
+    width: 100%;
+}

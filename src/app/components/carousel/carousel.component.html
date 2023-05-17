@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <app-modal-shared *ngIf="modal" (toggleModal)="toggleModal()"
+        (share)="shareOnSocialMediaEvent($event)"></app-modal-shared>
+    <div class="carousel">
+        <p-carousel [value]="backupQuotes" [numVisible]="1" [circular]="false" [showIndicators]="false"
+            [autoplayInterval]="3000">
+            <ng-template let-quote pTemplate="item">
+                <div class="carousel__container">
+                    <h1 class="carousel__content mb-1">{{ quote.quoteText }}</h1>
+                    <h5 class="carousel__author">{{ quote.author }}</h5>
+                    <button class="btn" (click)="shareQuote(quote)">share&nbsp;<i class='pi pi-share-alt'
+                            style="font-size: 0.8"></i></button>
+                </div>
+            </ng-template>
+        </p-carousel>
+        <div class="card flex justify-content-center">
+            <p-rating [(ngModel)]="rating" [cancel]="false"></p-rating>
+        </div>
+        <div class="carousel__buttons">
+            <button class="btn"><a [routerLink]="['/']">BACK</a></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <app-modal-shared *ngIf="modal" (share)="shareOnSocialMediaEvent($event)"
+        (toggleModal)="toggleModal()"></app-modal-shared>
+    <div class="container">
+        <div class="random-quote ">
+            <ng-container *ngIf="(randomQuote$ | async) as randomQuote">
+                <h1 class="random-quote__content" [ngClass]="{'animate-quote': toggleQuote}">"{{randomQuote.quoteText}}"
+                </h1>
+                <h5 class="random-quote__author" [ngClass]="{'animate-quote': toggleQuote}">"{{randomQuote.author}}"
+                </h5>
+                <button class="random-quote__btn" (click)="toggleModal()">share&nbsp;<i class='pi pi-share-alt'
+                        style="font-size: 0.8"></i></button>
+            </ng-container>
+        </div>
+        <div class="card flex justify-content-center">
+            <p-rating [(ngModel)]="rating" [cancel]="false"></p-rating>
+        </div>
+        <div class="random-quote__buttons">
+            <button class="random-quote__btn" (click)="getRandomQuote()">get quote</button>
+            <button class="random-quote__btn"><a [routerLink]="['/slide-show']">go to slideshow</a></button>
+        </div>
+    </div>
+</div>

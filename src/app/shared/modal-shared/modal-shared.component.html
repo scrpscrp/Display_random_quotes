@@ -1,0 +1,6 @@
+<div class="overlay" (click)="toggleModal.emit()">
+    <div class="modal">
+        <i class="modal__icon pi pi-facebook" (click)="share.emit(socialMedia.Facebook)"></i>
+        <i class="modal__icon pi pi-twitter" (click)="share.emit(socialMedia.Twitter)"></i>
+    </div>
+</div>
