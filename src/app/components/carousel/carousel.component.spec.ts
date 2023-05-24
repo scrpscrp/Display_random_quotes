@@ -3,6 +3,12 @@ import { CarouselComponent } from './carousel.component';
 import { ShareOnSMService } from 'src/app/shared/services/share-on-social-media.service';
 import { SocialMediaEnum } from 'src/app/shared/interfaces/social-media.enum';
 import { RandomQuoteDisplayInterface } from 'src/app/shared/interfaces/randomQuoteDisplay.interface';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RatingModule } from 'primeng/rating'; 
+import { CarouselModule } from 'primeng/carousel';
+import { RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('CarouselComponent', () => {
   let component: CarouselComponent;
@@ -14,7 +20,16 @@ describe('CarouselComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [CarouselComponent],
-      providers: [{ provide: ShareOnSMService, useValue: shareOnSMServiceMock }]
+      imports: [HttpClientTestingModule, RatingModule, CarouselModule, FormsModule, ReactiveFormsModule, RouterModule], // Import HttpClientTestingModule
+      providers: [{ provide: ShareOnSMService, useValue: shareOnSMServiceMock },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: new Map().set('id', '1') 
+            }
+          }
+        }]
     }).compileComponents();
 
     shareOnSMServiceSpy = TestBed.inject(ShareOnSMService) as jasmine.SpyObj<ShareOnSMService>;

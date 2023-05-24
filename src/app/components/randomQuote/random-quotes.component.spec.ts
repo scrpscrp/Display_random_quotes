@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 import { RandomQuotesComponent } from './random-quotes.component';
 import { RandomQuotesService } from 'src/app/shared/services/randomQuotes/random-quotes.service';
 import { ShareOnSMService } from 'src/app/shared/services/share-on-social-media.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RatingModule } from 'primeng/rating';
 
 
 describe('RandomQuotesComponent', () => {
@@ -17,6 +19,7 @@ describe('RandomQuotesComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [RandomQuotesComponent],
+      imports: [HttpClientTestingModule, RatingModule],
       providers: [
         { provide: RandomQuotesService, useValue: mockRandomQuotesService },
         { provide: ShareOnSMService, useValue: mockShareOnSMService }
